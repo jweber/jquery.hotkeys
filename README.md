@@ -18,6 +18,15 @@ The syntax is as follows:
 ## Types
 Supported types are `'keydown'`, `'keyup'` and `'keypress'`
 
+## Sequences
+
+Handlers can be bound to a keypresses that contain a definable sequence of characters. For instance, pressing the `g` then `a` keys. The keypresses in the sequence must be executed within one second of each other to trigger the handler. Any number of characters can be required of a sequence and multiple sequences (seperated by a space) can be bound to the same handler.
+
+    jQuery(document).bind('keydown', 'g;a', function (evt)
+	{ 
+		alert('g then a');
+	});
+
 ## Notes
 
 If you want to use more than one modifiers (e.g. alt+ctrl+z) you should define them by an alphabetical order e.g. alt+ctrl+shift
